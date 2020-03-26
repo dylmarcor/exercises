@@ -1,11 +1,11 @@
-// Make the Node data type
+// Make the Node constructor 
 
 function Node(data) {
     this.data = data;
     this.next = null;
 };
 
-// Make SinglyList data type for Single-Linked-List
+// Make SinglyList constructor for Single-Linked-List
 
 function SinglyList() {
     this._length = 0;
@@ -35,3 +35,23 @@ SinglyList.prototype.add = function(value) {
 
     return node;
 };
+
+SinglyList.prototype.searchNodeAt = function(position) {
+    var currentNode = this.head,
+	length = this._lenghth,
+	count = 1,
+	message = {failure: 'Failure: non-existent node in this list.'};
+
+    // 1st use case: an invalid position
+    if (length === 0 || position < 1 || position > length) {
+	throw new Error(message.failure);
+    }
+
+    // 2nd use case : a valid position
+    while (count < position) {
+	currentNode = currentNode.next;
+	count++;
+    }
+
+    return currentNode;
+}
