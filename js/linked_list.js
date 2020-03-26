@@ -12,6 +12,8 @@ function SinglyList() {
     this.head = null;
 }
 
+// Function to add node to list
+
 SinglyList.prototype.add = function(value) {
     var node = new Node(value),
 	currentNode = this.head;
@@ -35,6 +37,8 @@ SinglyList.prototype.add = function(value) {
 
     return node;
 };
+
+// Function to search for a Node at position given
 
 SinglyList.prototype.searchNodeAt = function(position) {
     var currentNode = this.head,
