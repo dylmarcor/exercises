@@ -6,5 +6,7 @@
  */
 
 let reverse = function(x) {
-
+    if (x < (-21**31) || x > (-21**31 -1)) {
+        return "Larger int than 32-bit."
+    }
 };
