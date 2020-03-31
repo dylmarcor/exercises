@@ -15,13 +15,12 @@ let reverse = function(x) {
 
     let y = (""+x).split("");
     let arr = [];
-    let result = Number;
-    for (let i = 0; i < y.length; i++) {
-        arr.unshift(y.pop());
+    for (let i = 0; i < y.length + 1; i++) {
+        arr.push(y.pop());
+        console.log(arr);
     }
-    result = a.map((x) => {
-        return parseInt(x, 10);
-    }); 
-    
-    return result;
+
+    return arr;
 };
+
+console.log(reverse(321));
